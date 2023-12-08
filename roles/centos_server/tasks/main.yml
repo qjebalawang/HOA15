@@ -1,66 +1,66 @@
 # Neutron (Networking Service)
-  - name: install neutron (CentOS)
-    yum:
-      name:
-        - openstack-neutron
-        - openstack-neutron-ml2
-        - openstack-neutron-linuxbridge
-        - ebtables
-      state: present
+- name: install neutron
+  yum:
+    name:
+      - openstack-neutron
+      - openstack-neutron-ml2
+      - openstack-neutron-linuxbridge
+      - ebtables
+    state: present
 
-    - name: restart openstack-nova-api service
-    service:
-      name: openstack-nova-api
-      state: restarted
+- name: restart openstack-nova-api service
+  service:
+    name: openstack-nova-api
+    state: restarted
 
-  - name: restart neutron-server service
-    service:
-      name: neutron-server
-      state: started
+- name: restart neutron-server service
+  service:
+    name: neutron-server
+    state: started
 
-  - name: restart neutron-linuxbridge-agent service
-    service:
-      name: neutron-linuxbridge-agent
-      state: started
+- name: restart neutron-linuxbridge-agent service
+  service:
+    name: neutron-linuxbridge-agent
+    state: started
 
-  - name: neutron-metadata-agent service
-    service:
-      name: neutron-metadata-agent
-      state: started
+- name: neutron-metadata-agent service
+  service:
+    name: neutron-metadata-agent
+    state: started
 
 # Horizon (Dashboard)
-  - name: install horizon (CentOS)
-    yum:
-      name: openstack-dashboard
-      state: present
+- name: install horizon
+  yum:
+    name: openstack-dashboard
+    state: present
 
-    - name: restart httpd service
-    service:
-      name: httpd
-      state: restarted
+- name: restart httpd service
+  service:
+    name: httpd
+    state: restarted
 
-  - name: restart memcached service
-    service:
-      name: memcached
-      state: restarted
+- name: restart memcached service
+  service:
+    name: memcached
+    state: restarted
 
 # Cinder (Block Storage Service)
-  - name: install cinder (CentOS)
-    yum:
-      name: openstack-cinder
-      state: present
+- name: install cinder
+  yum:
+    name: openstack-cinder
+    state: present
 
-    - name: restart openstack-nova-api service
-    service:
-      name: openstack-nova-api
-      state: restarted
+- name: restart openstack-nova-api service
+  service:
+    name: openstack-nova-api
+    state: restarted
 
-  - name: restart openstack-cinder-api service
-    service:
-      name: openstack-cinder-api
-      state: started
+- name: restart openstack-cinder-api service
+  service:
+    name: openstack-cinder-api
+    state: started
 
-  - name: restart openstack-cinder-scheduler service
-    service:
-      name: openstack-cinder-scheduler
-      state: started
+- name: restart openstack-cinder-scheduler service
+  service:
+    name: openstack-cinder-scheduler
+    state: started
