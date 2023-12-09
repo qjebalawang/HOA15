@@ -21,18 +21,18 @@
 - name: restart neutron-linuxbridge-agent service
   service:
     #name: neutron-linuxbridge-agent
-    state: started
+    #state: started
 
 - name: neutron-metadata-agent service
   service:
     #name: neutron-metadata-agent
-    state: started
+    #state: started
 
 # Horizon (Dashboard)
 - name: install horizon
   yum:
     #name: openstack-dashboard
-    state: present
+    #state: present
 
 - name: restart httpd service
   service:
@@ -48,19 +48,19 @@
 - name: install cinder
   yum:
     #name: openstack-cinder
-    state: present
+    #state: present
 
 - name: restart openstack-nova-api service
   service:
     #name: openstack-nova-api
-    state: restarted
+    #state: restarted
 
 - name: restart openstack-cinder-api service
   service:
     #name: openstack-cinder-api
-    state: started
+    #state: started
 
 - name: restart openstack-cinder-scheduler service
   service:
     #name: openstack-cinder-scheduler
-    state: started
+    #state: started
