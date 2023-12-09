@@ -18,12 +18,12 @@
     changed_when: false
     when: ansible_distribution == "Ubuntu"
 
-- hosts: ubuntu_server
-  become: true
-  roles:
-    - ubuntu_server
-
 - hosts: centos_server
   become: true
   roles:
     - centos_server
+
+- hosts: ubuntu_server
+  become: true
+  roles:
+    - ubuntu_server
