@@ -2,36 +2,36 @@
 - name: install neutron
   yum:
     name:
-      - openstack-neutron
-      - openstack-neutron-ml2
-      - openstack-neutron-linuxbridge
+      #- openstack-neutron
+      #- openstack-neutron-ml2
+      #- openstack-neutron-linuxbridge
       - ebtables
     state: present
 
 - name: restart openstack-nova-api service
   service:
-    name: openstack-nova-api
-    state: restarted
+    #name: openstack-nova-api
+    #state: restarted
 
 - name: restart neutron-server service
   service:
-    name: neutron-server
-    state: started
+    #name: neutron-server
+    #state: started
 
 - name: restart neutron-linuxbridge-agent service
   service:
-    name: neutron-linuxbridge-agent
+    #name: neutron-linuxbridge-agent
     state: started
 
 - name: neutron-metadata-agent service
   service:
-    name: neutron-metadata-agent
+    #name: neutron-metadata-agent
     state: started
 
 # Horizon (Dashboard)
 - name: install horizon
   yum:
-    name: openstack-dashboard
+    #name: openstack-dashboard
     state: present
 
 - name: restart httpd service
@@ -47,20 +47,20 @@
 # Cinder (Block Storage Service)
 - name: install cinder
   yum:
-    name: openstack-cinder
+    #name: openstack-cinder
     state: present
 
 - name: restart openstack-nova-api service
   service:
-    name: openstack-nova-api
+    #name: openstack-nova-api
     state: restarted
 
 - name: restart openstack-cinder-api service
   service:
-    name: openstack-cinder-api
+    #name: openstack-cinder-api
     state: started
 
 - name: restart openstack-cinder-scheduler service
   service:
-    name: openstack-cinder-scheduler
+    #name: openstack-cinder-scheduler
     state: started
